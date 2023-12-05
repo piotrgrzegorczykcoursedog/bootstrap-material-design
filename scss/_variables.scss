@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // FIXME: re-examine organization of variables, files, ordering etc.  While the ordering works, we need to be sure this is more comprehensible.
 @import "variables/colors";
 @import "variables/shadow";
@@ -82,8 +84,8 @@ $icon-color: rgba($black, 0.5) !default;
 
 // --------------------
 // inputs
-$bmd-bmd-label-static-size-ratio: 75 / 100 !default;
-$bmd-help-size-ratio: 75 / 100 !default;
+$bmd-bmd-label-static-size-ratio: math.div(75, 100) !default;
+$bmd-help-size-ratio: math.div(75, 100) !default;
 
 //$bmd-form-control-bg-repeat-y: repeat-y !default; // it could work with no-repeat, but on Safari it's bugged and repeat-y is needed, but repeat-y is bugged on the warning icon.
 $bmd-form-control-bg-repeat-y: no-repeat !default;
