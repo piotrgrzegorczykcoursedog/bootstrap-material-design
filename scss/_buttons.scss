@@ -158,8 +158,8 @@
         line-height: 1;
         vertical-align: middle;
         transform: translate(
-          -($bmd-btn-icon-font-size-sm / 2),
-          -($bmd-btn-icon-font-size-sm / 2)
+          -(math.div($bmd-btn-icon-font-size-sm, 2)),
+          -(math.div($bmd-btn-icon-font-size-sm, 2))
         );
       }
     }
