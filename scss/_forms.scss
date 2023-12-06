@@ -72,7 +72,7 @@ form {
 // State coloring: default, success, info, warning, danger
 //
 @include bmd-selection-color();
-@include bmd-form-color($bmd-label-color, $bmd-label-color-focus, $input-border-color);
+@include bmd-form-color-top-level($bmd-label-color, $bmd-label-color-focus, $input-border-color);
 
 .has-success {
   @include bmd-form-color(theme-color(success), theme-color(success), theme-color(success));
@@ -170,7 +170,7 @@ form {
 }
 
 // default floating size/location without a form-group (will skip form-group styles, and just render default sizing variation) - IMPORTANT for non-form-group spacing such as radio/checkbox/switch
-@include bmd-form-size-variant($font-size-base, $bmd-label-top-margin-base, $input-padding-y, $bmd-form-line-height);
+@include bmd-form-size-variant-top-level($font-size-base, $bmd-label-top-margin-base, $input-padding-y, $bmd-form-line-height);
 
 select {
   &,

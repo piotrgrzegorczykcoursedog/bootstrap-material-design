@@ -31,7 +31,9 @@
 }
 
 /**
- * Syntax error "Top-level selectors may not contain the parent selector "&"" when using @include bmd-drawer-x-out() on top level
+ * This is copy of bmd-drawer-x-out() mixin adjusted to be used on top level (removed top level &. selector).
+ * Using @include bmd-drawer-x-out() on top level will result in error:
+ * Syntax error "Top-level selectors may not contain the parent selector "&""
  */
 @mixin bmd-drawer-x-out-top-level($size) {
   @each $side, $abbrev in (left: l, right: r) {
@@ -93,7 +95,9 @@
 }
 
 /**
- * Syntax error "Top-level selectors may not contain the parent selector "&"" when using @include bmd-drawer-y-out() on top level
+ * This is copy of bmd-drawer-y-out() mixin adjusted to be used on top level (removed top level &. selector).
+ * Using @include bmd-drawer-y-out() on top level will result in error:
+ * Syntax error "Top-level selectors may not contain the parent selector "&""
  */
 @mixin bmd-drawer-y-out-top-level($size) {
   @each $side, $abbrev in (top: t, bottom: b) {
