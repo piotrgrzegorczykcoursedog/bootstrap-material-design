@@ -57,10 +57,10 @@
 // Sizing and positioning below here
 
 // for left or right drawers, setup widths, heights and positions
-@include bmd-drawer-x-out($bmd-drawer-x-size);
+@include bmd-drawer-x-out-top-level($bmd-drawer-x-size);
 
 // for top or bottom drawers, setup widths, heights and positions
-@include bmd-drawer-y-out($bmd-drawer-y-size);
+@include bmd-drawer-y-out-top-level($bmd-drawer-y-size);
 
 // Marker class for both triggering the opening of the drawer (i.e. javascript #addClass('.bmd-drawer-in')), as well
 //  as responsive sizes (i.e. bmd-drawer-in-md will open once the browser is wider than 768px).

@@ -30,9 +30,74 @@
   }
 }
 
+/**
+ * Syntax error "Top-level selectors may not contain the parent selector "&"" when using @include bmd-drawer-x-out() on top level
+ */
+@mixin bmd-drawer-x-out-top-level($size) {
+  @each $side, $abbrev in (left: l, right: r) {
+    .bmd-drawer-f-#{$abbrev} {
+      > .bmd-layout-drawer {
+        // position
+        top: 0;
+        #{$side}: 0;
+
+        width: $size;
+        height: 100%;
+
+        @if $side == left {
+          transform: translateX(
+            -$size - 10px
+          ); // initial position of drawer (closed), way off screen
+        } @else {
+          transform: translateX(
+            $size + 10px
+          ); // initial position of drawer (closed), way off screen
+        }
+      }
+
+      > .bmd-layout-header,
+      > .bmd-layout-content {
+        margin-#{$side}: 0;
+      }
+    }
+  }
+}
+
 @mixin bmd-drawer-y-out($size) {
   @each $side, $abbrev in (top: t, bottom: b) {
     &.bmd-drawer-f-#{$abbrev} {
+      > .bmd-layout-drawer {
+        // position
+        #{$side}: 0;
+        left: 0;
+
+        width: 100%;
+        height: $size;
+
+        @if $side == top {
+          transform: translateY(
+            -$size - 10px
+          ); // initial position of drawer (closed), way off screen
+        } @else {
+          transform: translateY(
+            $size + 10px
+          ); // initial position of drawer (closed), way off screen
+        }
+      }
+
+      > .bmd-layout-content {
+        margin-#{$side}: 0;
+      }
+    }
+  }
+}
+
+/**
+ * Syntax error "Top-level selectors may not contain the parent selector "&"" when using @include bmd-drawer-y-out() on top level
+ */
+@mixin bmd-drawer-y-out-top-level($size) {
+  @each $side, $abbrev in (top: t, bottom: b) {
+    .bmd-drawer-f-#{$abbrev} {
       > .bmd-layout-drawer {
         // position
         #{$side}: 0;
